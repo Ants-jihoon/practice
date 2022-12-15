@@ -7,6 +7,9 @@ const id = document.querySelector("#id"),
 loginBtn.addEventListener("click",login);
 
 function login() {
+    if(!id.value) return alert("아이디를 입력하시오");
+    if(psword.value !== confirmPsword.value) return alert("비밀번호가 일치하지 않습니다.");
+    
     const req= {
         id: id.value,
         psword: psword.value,
@@ -25,6 +28,7 @@ function login() {
                 location.href ="/";
             }
             else{
+                if(res.err) return alert(res.err);
                 alert(res.msg);
             }
         })

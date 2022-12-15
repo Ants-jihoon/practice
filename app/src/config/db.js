@@ -4,8 +4,9 @@ const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PSWORD,
-    database: process.env.DB_DATABASE,
+    database: process.env.DB_DATABASE
 });
+//process.env.DB_DATABASE
 
 db.connect();
 
